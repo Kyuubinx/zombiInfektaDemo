@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://daqdukagag6a5"]
+
+[ext_resource type="Script" path="res://map_data.gd" id="1_tf5uy"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_tf5uy")
+
+[node name="btn_front" type="Button" parent="."]
+offset_left = 923.0
+offset_top = 301.0
+offset_right = 1031.0
+offset_bottom = 411.0
+text = "Front"
+
+[node name="btn_back" type="Button" parent="."]
+offset_left = 924.0
+offset_top = 530.0
+offset_right = 1032.0
+offset_bottom = 640.0
+text = "Back"
+
+[node name="btn_left" type="Button" parent="."]
+offset_left = 805.0
+offset_top = 417.0
+offset_right = 913.0
+offset_bottom = 527.0
+text = "Left"
+
+[node name="btn_right" type="Button" parent="."]
+offset_left = 1036.0
+offset_top = 418.0
+offset_right = 1144.0
+offset_bottom = 528.0
+text = "Right"
