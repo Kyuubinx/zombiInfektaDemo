@@ -10,6 +10,14 @@ var map_data = []
 var nav = []
 var map_safezone = [1, 21, 23, 32, 34, 41, 44]
 var map_spawnpoint = [6, 16, 17, 28, 35, 38]
+var final_safezone = 0
+
+func _ready():
+	final_safezone_definer()
+
+func _process(delta):
+	if current_map == final_safezone:
+		print("You won!!")
 
 func map_data_reader():
 	match current_map:
@@ -166,3 +174,86 @@ func map_data_reader():
 		51:
 			map_data = ["Library (Top Right)", 0]
 			nav = [[false, 0], [true, 48], [true, 50], [false, 0]]
+
+func _on_btn_front_button_up():
+	if current_map == 0:
+		var spawn = map_spawnpoint[randi() % map_spawnpoint.size()]
+		current_map = spawn
+		map_data_reader()
+		print(current_map)
+		print(nav)
+	else:
+		if nav[0][0] == true:
+			current_map = nav[0][1]
+			map_data_reader()
+			print("mapa atual: ")
+			print(map_data)
+			print("ID atual: ")
+			print(current_map)
+			print("Navegacao atual:")
+			print(nav)
+		else :
+			print('n pode se mover')
+	
+func _on_btn_back_button_up():
+	if current_map == 0:
+		var spawn = map_spawnpoint[randi() % map_spawnpoint.size()]
+		current_map = spawn
+		map_data_reader()
+		print(current_map)
+		print(nav)
+	else:
+		if nav[1][0] == true:
+			current_map = nav[1][1]
+			map_data_reader()
+			print("mapa atual: ")
+			print(map_data)
+			print("ID atual: ")
+			print(current_map)
+			print("Navegacao atual:")
+			print(nav)
+		else :
+			print('n pode se mover')
+
+func _on_btn_left_button_up():
+	if current_map == 0:
+		var spawn = map_spawnpoint[randi() % map_spawnpoint.size()]
+		current_map = spawn
+		map_data_reader()
+		print(current_map)
+		print(nav)
+	else:
+		if nav[2][0] == true:
+			current_map = nav[2][1]
+			map_data_reader()
+			print("mapa atual: ")
+			print(map_data)
+			print("ID atual: ")
+			print(current_map)
+			print("Navegacao atual:")
+			print(nav)
+		else :
+			print('n pode se mover')
+
+func _on_btn_right_button_up():
+	if current_map == 0:
+		var spawn = map_spawnpoint[randi() % map_spawnpoint.size()]
+		current_map = spawn
+		map_data_reader()
+		print(current_map)
+		print(nav)
+	else:
+		if nav[3][0] == true:
+			current_map = nav[3][1]
+			map_data_reader()
+			print("mapa atual: ")
+			print(map_data)
+			print("ID atual: ")
+			print(current_map)
+			print("Navegacao atual:")
+			print(nav)
+		else :
+			print('n pode se mover')
+
+func final_safezone_definer():
+	final_safezone = map_safezone[randi() % map_safezone.size()]
