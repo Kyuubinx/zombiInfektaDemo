@@ -264,7 +264,6 @@ func _on_btn_right_button_up():
 
 func final_safezone_definer():
 	final_safezone = map_safezone[randi() % map_safezone.size()]
-<<<<<<< HEAD:zombi_infekta/world_script.gd
 
 func turn_reader():
 	safe_zone = map_safezone.pick_random()
@@ -299,7 +298,3 @@ func draw():
 	for i in maps_to_draw:
 		var zombie = array_zombies.pick_random()
 		zombies.append([i, zombie])
-=======
-	
-	#vamo ver se da commit
->>>>>>> 7f23cfe5813d57aa70a228ec1ef077d6ccb51661:zombi_infekta/map_data.gd
