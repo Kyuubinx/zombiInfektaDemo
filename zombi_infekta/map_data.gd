@@ -257,3 +257,5 @@ func _on_btn_right_button_up():
 
 func final_safezone_definer():
 	final_safezone = map_safezone[randi() % map_safezone.size()]
+	
+	#vamo ver se da commit
